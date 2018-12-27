@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <title>WebApp</title>
   </head>
@@ -14,14 +15,42 @@
       <div class="navbar-toggler"><i class="fas fa-bars"></i></div>
       <div class="navlinks">
         <ul class="main-nav">
-          <li class="navlink">About</li>
-          <li class="navlink">Online Store</li>
-          <li class="navlink">Services</li>
-          <li class="navlink">Gallery</li>
-          <li class="navlink">Contact Us</li>
+          <li class="navlink">
+            <a href="#">About</a>
+          </li>
+          <li class="navlink">
+            <a href="#">Online Store</a>
+          </li>
+          <li class="navlink">
+            <a href="#">Services</a>
+          </li>
+          <li class="navlink">
+            <a href="#">Gallery</a>
+          </li>
+          <li class="navlink">
+            <a href="">Contact Us</a>
+          </li>
         </ul>
       </div>
     </nav>
+
+    <div class="jumbotron">
+      <div class="slide fade">
+        <img class="slide-img" src="assets/pictures/mountain1.jpg" alt="picture of a mountain" style="width: 100%">
+      </div>
+      <div class="slide fade">
+        <img class="slide-img" src="assets/pictures/mountain2.jpg" alt="picture of a mountain" style="width: 100%">
+      </div>
+      <div class="slide fade">
+        <img class="slide-img" src="assets/pictures/mountain3.jpg" alt="picture of a mountain" style="width: 100%">
+      </div>
+      <div class="slide fade">
+        <img class="slide-img" src="assets/pictures/mountain4.jpg" alt="picture of a mountain" style="width: 100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
     <script src="index.js"></script>
   </body>
