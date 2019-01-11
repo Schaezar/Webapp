@@ -45,6 +45,36 @@ section {
   }
 }
 
+.hamburger {
+  grid-column-start: 23;
+  grid-column-end: 24;
+  display: none;
+  align-self: center;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 3px;
+  background: #f1f1f1;
+  margin: 6px auto;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
 .jumbotron {
   height: 100vh;
   margin: auto;
@@ -145,21 +175,48 @@ section {
   align-items: center;
 
   &:hover {
-    background: rgb(192, 0, 0);
+    background: rgb(161, 12, 12);
   }
 }
 
-.navbar-toggler {
-  grid-column-start: 24;
-  grid-column-end: 25;
-  font-size: 1.4em;
-  display: none;
-  align-self: center;
-  text-align: center;
-  cursor: pointer;
+.overlay-navlinks {
+  grid-column-start: 3;
+  grid-column-end: 10;
 }
 
-@media (max-width: 810px) {
+.overlay-navlink {
+  padding: 25px 0px;
+  font-size: 1.25em;
+  transition: 0.25s;
+  display: grid;
+  align-items: center;
+  border-bottom: 2px solid #e6e6e6;
+
+  &:hover {
+    background: rgb(161, 12, 12);
+  }
+}
+
+#nav-overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  z-index: 1;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s;
+  margin-top: 60px;
+
+  @media (min-width: 830px) {
+    display: none;
+  }
+}
+
+@media (max-width: 830px) {
   .navlinks {
     grid-column-start: 3;
     display: block;
@@ -169,14 +226,16 @@ section {
     display: none;
     text-align: left;
   }
-  .navbar-toggler {
-    display: grid;
-    
-    i {
-      align-self: center;
-    }
+  .hamburger {
+    display: inline-block;
   }
-  .navbar-toggleshow {
-    display: block;
+}
+
+@media (max-height: 450px) {
+  .overlay a {font-size: 20px;}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
   }
 }

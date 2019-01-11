@@ -49,6 +49,40 @@ section {
       align-self: center;
 }
 
+.hamburger {
+  -ms-grid-column: 23;
+      grid-column-start: 23;
+  grid-column-end: 24;
+  display: none;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 3px;
+  background: #f1f1f1;
+  margin: 6px auto;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-8px, 6px);
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -6px);
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
 .jumbotron {
   height: 100vh;
   margin: auto;
@@ -173,23 +207,57 @@ section {
 }
 
 .navlink:hover {
-  background: #c00000;
+  background: #a10c0c;
 }
 
-.navbar-toggler {
-  -ms-grid-column: 24;
-      grid-column-start: 24;
-  grid-column-end: 25;
-  font-size: 1.4em;
-  display: none;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  text-align: center;
-  cursor: pointer;
+.overlay-navlinks {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 10;
 }
 
-@media (max-width: 810px) {
+.overlay-navlink {
+  padding: 25px 0px;
+  font-size: 1.25em;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.overlay-navlink:hover {
+  background: #a10c0c;
+}
+
+#nav-overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[24];
+      grid-template-columns: repeat(24, 1fr);
+  z-index: 1;
+  background: black;
+  background: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin-top: 60px;
+}
+
+@media (min-width: 830px) {
+  #nav-overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 830px) {
   .navlinks {
     -ms-grid-column: 3;
         grid-column-start: 3;
@@ -200,17 +268,19 @@ section {
     display: none;
     text-align: left;
   }
-  .navbar-toggler {
-    display: -ms-grid;
-    display: grid;
+  .hamburger {
+    display: inline-block;
   }
-  .navbar-toggler i {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+}
+
+@media (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
   }
-  .navbar-toggleshow {
-    display: block;
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
   }
 }
 /*# sourceMappingURL=index.css.map */

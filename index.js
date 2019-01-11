@@ -1,5 +1,7 @@
 console.log("CONNECTED");
 
+let navOpen = false;
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -26,11 +28,19 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 }
 
-function toggleCollapseMenu () {
-  const nav = document.querySelector('.main-nav');
+document.querySelector('.hamburger').addEventListener('click', toggleNav);
 
-  nav.classList.toggle('navbar-toggleshow');
+function toggleNav() {
+  if(!navOpen) {
+    document.getElementById("nav-overlay").style.height = "100%";
+    navOpen = !navOpen;
+  }
+  else {
+    document.getElementById("nav-overlay").style.height = "0%";
+    navOpen = !navOpen;
+  }
 }
 
-document.querySelector('.navbar-toggler').addEventListener('click', toggleCollapseMenu);
-
+function myFunction(x) {
+  x.classList.toggle("change");
+}

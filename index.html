@@ -8,11 +8,15 @@
   </head>
 
   <body>
-    <nav class="navbar">
+    <nav id="myNav" class="navbar">
       <div class="logo-div">
         <p>LOGO</p>
       </div>
-      <div class="navbar-toggler"><i class="fas fa-bars"></i></div>
+      <div class="hamburger" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
       <div class="navlinks">
         <ul class="main-nav">
           <li class="navlink">
@@ -30,6 +34,15 @@
           <li class="navlink">
             <a href="">Contact Us</a>
           </li>
+        </ul>
+      </div>
+      <div id="nav-overlay">
+        <ul class="overlay-navlinks">
+          <li class="overlay-navlink"><a href="#">About</a></li>
+          <li class="overlay-navlink"><a href="#">Online Store</a></li>
+          <li class="overlay-navlink"><a href="#">Services</a></li>
+          <li class="overlay-navlink"><a href="#">Gallery</a></li>
+          <li class="overlay-navlink"><a href="#">Contact Us</a></li>
         </ul>
       </div>
     </nav>
